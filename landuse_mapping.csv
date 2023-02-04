@@ -1,0 +1,24 @@
+region,source_lu,target_lu
+NAVARRA,agriculture,agriculture
+NAVARRA,public services,publicservices
+NAVARRA,ancillary,other
+NAVARRA,collective residence,residential
+NAVARRA,individual residence,residential
+NAVARRA,industrial,industrial
+NAVARRA,office,office
+NAVARRA,trade,commercial
+ALAVA,ancillary,other
+ALAVA,industrial,industrial
+ALAVA,office,office
+ALAVA,publicServices,publicservices
+ALAVA,residential,residential
+ALAVA,None, 
+ALAVA,trade,commercial
+ALAVA,agriculture,agriculture
+ES_INSPIRE,3_industrial,industrial
+ES_INSPIRE,1_residential,residential
+ES_INSPIRE,2_agriculture,agriculture
+ES_INSPIRE,None, 
+ES_INSPIRE,4_3_publicServices,publicservices
+ES_INSPIRE,4_1_office,office
+ES_INSPIRE,4_2_retail,commercial
