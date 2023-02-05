@@ -47,21 +47,21 @@ download=False ## downloads building footprint data per municipality in gml form
 convert_geopandas=False ## converts from GML to SHP for each municipality-level dataset.
 harmonize_data=False ## takes the previously created shapefiles and the manually downloaded data for Basque country and Navarra, and harmonizes them.
 mine_landuse=False ## analyzes the land use / building function types used in each data model
-harmonize_landuse=False ##harmonizes the land use / building functions used across data models.
+harmonize_landuse=False ##harmonizes the land use / building function classes used across data models.
 rasterize_age=False ## create age-related gridded surfaces
 rasterize_mutemp=False ## create evolutionary layers
 rasterize_landuse_mutemp=False ##creates multitemporal land use layers
 rasterize_physical_characteristics=False ##creates physical properties layers
 
 ## spatial and temporal dimensions:
-resample_factor=100 #spatial resolution
+resample_factor=100 #spatial resolution in meters
 years=np.arange(1900,2026,5) #temporal resolution / coverage
 
 ## GDAL binaries:
 gdal_edit = r'python C:\OSGeo4W\bin\gdal_edit.py' #path to gdal_edit.py
 gdalwarp = r'C:\OSGeo4W\bin\gdalwarp.exe' #path to gdalwarp.exe
 
-################################################################################################
+## some functions ##############################################################################################
 
 def variety(x):
     return np.unique(x).shape[0]
@@ -255,7 +255,7 @@ if harmonize_data:
         
         datadf['yearbuilt']=datadf.apply(lambda row : getyear1(row[yearcol]),axis=1).map(int)            
         datadf['yearbuilt']= datadf['yearbuilt'].replace(0,np.nan)
-        datadf['area']=datadf.geometry.to_crs(epsg=25830).area
+        datadf['area']=datadf.geometry.to_crs(epsg=3035).area # calculate footprint area in LAEA projection
 
         datadf['idx']=datadf.index
         datadf['source']=row.fullpath
