@@ -350,7 +350,6 @@ if rasterize_age:
             surface_folder = rasterdir_utm
             do_canaries_only=False
         
-        
         if do_canaries_only:    
             can_files=[]
             for file in os.listdir(shp_dir):
@@ -362,7 +361,6 @@ if rasterize_age:
             can_files_df=pd.DataFrame(can_files,columns=['region','fullpath'])
             can_idx=can_files_df[can_files_df.region=='CAN'].index.values
         
-    
         raster = gdal.Open(template_raster)
         cols = raster.RasterXSize
         rows = raster.RasterYSize
@@ -508,7 +506,6 @@ if rasterize_mutemp:
             can_files_df=pd.DataFrame(can_files,columns=['region','fullpath'])
             can_idx=can_files_df[can_files_df.region=='CAN'].index.values
     
-    
         raster = gdal.Open(template_raster)
         cols = raster.RasterXSize
         rows = raster.RasterYSize
@@ -519,8 +516,7 @@ if rasterize_mutemp:
         pixelHeight = int(abs(geotransform[5]))
         rasterrange=[[topleftX,topleftX+pixelWidth*cols],[topleftY-pixelHeight*rows,topleftY]]    
         del raster
-    
-            
+     
         for year in years:
             
             if year==1900:            
@@ -816,10 +812,8 @@ if rasterize_landuse_mutemp:
                         totaldf=out_dfs[target_lus.index(target_lu)][0]
                         totaldf=totaldf.append(currindf)
                         out_dfs[target_lus.index(target_lu)][0]=totaldf.copy()  
-                        
-    
-                    print (year, counter,' of 7725',param,target_variable,file,time.time()-starttime)
 
+                    print (year, counter,' of 7725',param,target_variable,file,time.time()-starttime)
 
             for target_lu in target_lus:#####################
                 print('binning', target_lu, year)
@@ -838,8 +832,6 @@ if rasterize_landuse_mutemp:
                 gdalNumpy2floatRaster_compressed(np.rot90(curr_surface),surface_folder+os.sep+'ES_buildings_%s_%s_%s_%s_%s_%s.tif' %('landuse','count_mutemp',curr_lu,resample_factor,lower_year,year),template_raster,cols,rows,bitdepth)
                 print('done binning', target_lu, year, time.time()-starttime)
                             
-
-    
         ##### now merge the increments to cumulative counts:
         for target_lu in target_lus:#####################
             curr_lu=target_lu.replace(' ','')
@@ -917,7 +909,6 @@ if rasterize_physical_characteristics:
             can_files_df=pd.DataFrame(can_files,columns=['region','fullpath'])
             can_idx=can_files_df[can_files_df.region=='CAN'].index.values
         
-    
         raster = gdal.Open(template_raster)
         cols = raster.RasterXSize
         rows = raster.RasterYSize
