@@ -4,3 +4,12 @@ The Historical Settlement Data Compilation for Spain (HISDAC-ES) contains a rang
 
 #### The 240+ gridded datasets in HISDAC-ES include the DEVA layer series, highlighting historical extents of developed areas:
 <img width="450" src="https://github.com/johannesuhl/hisdac-es/blob/main/hisdac_es_deva.gif">
+
+More visualizations are available at ttps://doi.org/10.6084/m9.figshare.22064798.
+
+Dataset:
+Uhl, Johannes H.; Royé, Dominic; Burghardt, Keith; Aldrey Vázquez, José Antonio; Borobio Sanchiz, Manuel; Leyk, Stefan (2023): HISDAC-ES: Historical Settlement Data Compilation for Spain (1900-2020). figshare. Dataset. https://doi.org/10.6084/m9.figshare.22009643
+
+Visualizations:
+Uhl, Johannes H.; Royé, Dominic; Burghardt, Keith; Aldrey Vázquez, José Antonio; Borobio Sanchiz, Manuel; Leyk, Stefan (2023): Visualizing long-term urbanization and land development in Spain (1900-2020). figshare. Media. https://doi.org/10.6084/m9.figshare.22064798 
+
