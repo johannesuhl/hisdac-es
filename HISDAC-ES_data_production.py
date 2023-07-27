@@ -865,9 +865,9 @@ if rasterize_landuse_mutemp:
     
 if rasterize_physical_characteristics:
 
-    target_vars=['num_dwel','offi_area']
-    stats=[np.sum,np.std,np.nansum,np.max,np.nanmean,np.nanmedian]
-    stats_str=['missing','sum','mean','median']#,'std','max']
+    target_vars=['area','offi_area','num_dwel','num_bunits']
+    stats=[np.nansum,np.nanmean]
+    stats_str=['sum','mean']
     
     params=[]
     params.append([True,False,False])
@@ -947,20 +947,7 @@ if rasterize_physical_characteristics:
                 if len(indf)==0:
                     continue
 
-                if target_var=='volume_unit':
-                    indf['area']=indf['area'].replace('',np.nan).replace(' ',np.nan).replace('None',np.nan).replace(0,np.nan)
-                    indf['num_floors']=indf['num_floors'].map(str).replace('',np.nan).replace(' ',np.nan).replace('None',np.nan).replace(0,np.nan)
-                    try:
-                        indf.num_floors=indf.num_floors.str.replace(',','.')
-                    except:
-                        pass
-                        
-                    indf[target_var]=np.multiply(indf['area'].values,indf.num_floors.map(float).values)                    
-                    indf[target_var]=indf[target_var].replace(np.nan,' ')
-                    indf[target_var]=indf[target_var].replace(0,' ')
-                    #sys.exit(0)
-                else:
-                    indf[target_var]=indf[target_var].replace(np.nan,' ').replace('',' ').replace('None',' ').replace(0,' ').replace('0',' ')
+                indf[target_var]=indf[target_var].replace(np.nan,' ').replace('',' ').replace('None',' ').replace(0,' ').replace('0',' ')
                 
                 for stat_str in stats_str:
                     starttime=time.time()  
