@@ -620,7 +620,7 @@ if rasterize_mutemp:
                 total_area_surface=total_area_surface+curr_area_incr_arr
                 
             total_area_surface[total_area_surface<0]=0
-            total_area_surface[total_area_surface>resample_factor*resample_factor]=0
+            total_area_surface[total_area_surface>resample_factor*resample_factor]=resample_factor*resample_factor # max bufa should not exceed surface area (will be chopped off at 10k sqm). this was set to 0 in the first version (copy-paste mistake).
             
             bua_surface = total_count_surface.copy()
             bua_surface[bua_surface>1]=1
