@@ -17,7 +17,7 @@ Uhl, Johannes H.; Royé, Dominic; Burghardt, Keith; Aldrey Vázquez, José Anton
 
 Code usage notes:
 
-# UPDATE 08-2023: We published two new scripts, reflecting changes and additions to the data, accelerating the rasterization process significantly.
+# UPDATE 08-2023: Two new scripts published, reflecting corrections and additions to the data, accelerating the rasterization process significantly.
 1) Script **HISDAC-ES_data_production.py** : We fixed two bugs that caused an incorrect rasterization of the multitemporal BUFA layers and of the PHYS layers (BUFA, BIA, DWEL, BUNITS sum and mean).
 2) Script: **HISDAC-ES_data_aggregation_municipalities.py** :
      - Creates a harmonized building centroid vector dataset (output of block "spatial_join", which is provided in the figshare repository)
